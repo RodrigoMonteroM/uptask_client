@@ -62,6 +62,9 @@ const Home = () => {
 
     // eslint-disable-next-line
   }, []);
+  //no se
+
+  console.error("Danger")
 
   return (
     <AuthLayout>
