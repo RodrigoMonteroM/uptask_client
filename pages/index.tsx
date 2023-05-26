@@ -7,9 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import cookie from "js-cookie";
-import { NextPageContext } from "next";
-import { parseCookies } from "nookies";
-import { cookies } from "next/dist/client/components/headers";
+
 
 interface Login {
   email: string;

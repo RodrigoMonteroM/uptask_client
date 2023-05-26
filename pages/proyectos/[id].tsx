@@ -41,7 +41,7 @@ const VerProyecto: React.FC<IFechProyectoProps> = ({
   //console.log(colaboradores)
 
 
-  useEffect(() => {
+/*   useEffect(() => {
     const url = `${process.env.NEXT_PUBLIC_URL_BACKEND}`;
 
     const socket = io("http://localhost:3100");
@@ -50,7 +50,7 @@ const VerProyecto: React.FC<IFechProyectoProps> = ({
     socket.on("respuesta", () => {
       console.log("desde el frontend")
     })
-  }, [])
+  }, []) */
 
   useEffect(() => {
     
