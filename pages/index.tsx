@@ -47,6 +47,7 @@ const Home = () => {
       cookie.set("token", data.token, { expires: 30 });
       router.push("/proyectos");
     } catch (error: any) {
+      console.log(error.message)
       setAlerta({
         error: true,
         mensaje: error.response.data,

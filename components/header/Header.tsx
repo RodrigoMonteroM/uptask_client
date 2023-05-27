@@ -1,9 +1,10 @@
 import Cookies from 'js-cookie'
 import Link from 'next/link'
 import React from 'react'
+import  { useRouter } from "next/router";
 
 const Header = () => {
-
+  const router = useRouter();
   return (
     <header className='px-4 py-5 bg-white border-b'>
       <div className='md:flex md:justify-between'>
@@ -13,6 +14,7 @@ const Header = () => {
           <Link href={"/proyectos"} className='hover:text-sky-600 transition-colors'>Proyectos</Link>
           <button className='text-white text-sm bg-sky-600 p-3 rounded-md uppercase font-bold' type='button' onClick={() => {
             Cookies.remove("token")
+            router.push("/")
           }}>Cerrar Cesion</button>
         </div>
       </div>
