@@ -62,7 +62,7 @@ const Home = () => {
   }, []);
   //no se
 
-  console.error("Danger")
+
 
   return (
     <AuthLayout>

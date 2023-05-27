@@ -13,9 +13,9 @@ import {
 import { GetServerSidePropsContext } from "next";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import io from "socket.io-client";
 
-let socket;
+
+
 
 const INITIAL_STATE_FORM_TAREA: ITarea = {
   descripcion: "",
@@ -35,7 +35,7 @@ const VerProyecto: React.FC<IFechProyectoProps> = ({
   const [cargando, setCargando] = useState<boolean>(true);
   const [colaboradores, setColaboradores] = useState<IColaborador[]>([]);
   const admin = useAdmin();
-  console.log(admin);
+  
 
   //console.log(colaboradores)
   //console.log(colaboradores)
@@ -43,7 +43,7 @@ const VerProyecto: React.FC<IFechProyectoProps> = ({
 
 /*   useEffect(() => {
     const url = `${process.env.NEXT_PUBLIC_URL_BACKEND}`;
-
+s
     const socket = io("http://localhost:3100");
     socket.emit("prueba", "rodrigo");
 

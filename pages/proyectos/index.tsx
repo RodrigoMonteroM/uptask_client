@@ -3,9 +3,8 @@ import Alerta from "@/components/alerta/Alerta";
 import RutaProtegida from "@/components/layout/RutaProtegida";
 import cliente from "@/config/client";
 
-import useAuth from "@/hooks/useAuth";
 import useProyecto from "@/hooks/useProyecto";
-import { Config, IAlerta, IProyecto } from "@/interfaces/interfaces";
+import { Config, IProyecto } from "@/interfaces/interfaces";
 import { GetServerSidePropsContext } from "next";
 import React, { useEffect } from "react";
 
@@ -15,18 +14,16 @@ interface ProyectosProps {
 }
 
 const Proyectos = ({ proyectosDb, error }: ProyectosProps) => {
-
-  const { obtenerProyectos: obtenerProyectos, proyectos,  } = useProyecto();
+  const { obtenerProyectos: obtenerProyectos, proyectos } = useProyecto();
 
   useEffect(() => {
     if (proyectosDb) {
       obtenerProyectos(proyectosDb);
-     
+
       return;
     }
 
     if (error) {
-      console.log(error);
       return;
     }
   }, []); /* eslint-disable-line */
@@ -60,6 +57,9 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
         Authorization: `Bearer ${token}`,
       },
     };
+
+    // TODO: Bug cors
+    
     const { data: proyectosDb } = await cliente("/proyectos", config);
 
     return {
