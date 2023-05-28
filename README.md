@@ -2,6 +2,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+
+The account creation works, but you won't be able to confirm your account because I receive your email notifications through my account Mailtrap. If you want to test the app, use the following credentials:
+```
+  email: 'test@test' 
+  password: 'testing'
+```
+
+
 First, run the development server:
 
 ```bash
